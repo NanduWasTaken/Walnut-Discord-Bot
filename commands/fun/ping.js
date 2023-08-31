@@ -20,6 +20,7 @@ module.exports = {
 
     return interaction.editReply(`Websocket HeartBeat: ${interaction.client.ws.ping}ms\nRoundtrip Latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
 
+    
    
   },
 };
