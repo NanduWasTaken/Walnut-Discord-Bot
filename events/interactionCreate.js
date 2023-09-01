@@ -42,7 +42,6 @@ module.exports = {
     channel.send({ embeds: [embed] });
 
     const command = interaction.client.commands.get(interaction.commandName);
-
     if (!command) {
       console.error(
         `No command matching ${interaction.commandName} was found.`,
@@ -51,12 +50,12 @@ module.exports = {
     }
     const { cooldowns } = interaction.client;
 
-    if (!cooldowns.has(command.data.name)) {
-      cooldowns.set(command.data.name, new Collection());
+    if (!cooldowns.has(command.cmd.data.name)) {
+      cooldowns.set(command.cmd.data.name, new Collection());
     }
 
     const now = Date.now();
-    const timestamps = cooldowns.get(command.data.name);
+    const timestamps = cooldowns.get(command.cmd.data.name);
     const defaultCooldownDuration = 3;
     const cooldownAmount = (command.cooldown ?? defaultCooldownDuration) * 1000;
 
@@ -67,7 +66,7 @@ module.exports = {
       if (now < expirationTime) {
         const expiredTimestamp = Math.round(expirationTime / 1000);
         const cooldownMessage = await interaction.reply({
-          content: `Please wait, you are on a cooldown for \`${command.data.name}\`. You can use it again <t:${expiredTimestamp}:R>.`,
+          content: `Please wait, you are on a cooldown for \`${command.cmd.data.name}\`. You can use it again <t:${expiredTimestamp}:R>.`,
           ephemeral: true,
         });
 
@@ -84,7 +83,7 @@ module.exports = {
     setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
 
     try {
-      await command.execute(interaction);
+      await command.cmd.execute(interaction);
     } catch (error) {
       console.error(error);
       if (interaction.replied || interaction.deferred) {
@@ -101,3 +100,4 @@ module.exports = {
     }
   },
 };
+          
