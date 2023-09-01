@@ -7,8 +7,8 @@ const {
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("test")
-    .setDescription("Replies with cool stuff!"),
+    .setName("help")
+    .setDescription("Replies with help stuff!"),
   async execute(interaction) {
     const select = new StringSelectMenuBuilder()
       .setCustomId("starter")
@@ -43,3 +43,4 @@ module.exports = {
     });
   },
 };
+        
