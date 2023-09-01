@@ -1,4 +1,3 @@
-// Require Discord.js and define discord token
 const TOKEN = process.env["TOKEN"];
 const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
 const { token } = require("./config");
