@@ -1,11 +1,13 @@
-const { Events, EmbedBuilder, Collection } = require('discord.js');
-const config = require('./../config')
+const { Events, EmbedBuilder, Collection } = require("discord.js");
+const config = require("./../config");
 
 module.exports = {
   name: Events.InteractionCreate,
   async execute(interaction) {
     if (!interaction.isChatInputCommand()) return;
-    const channel = interaction.client.channels.cache.get(config.cmd_log_channel);
+    const channel = interaction.client.channels.cache.get(
+      config.cmd_log_channel,
+    );
 
     const embed = new EmbedBuilder()
       .setAuthor({
@@ -37,12 +39,14 @@ module.exports = {
       })
       .setTimestamp();
 
-    channel.send({ embeds: [embed] })
+    channel.send({ embeds: [embed] });
 
     const command = interaction.client.commands.get(interaction.commandName);
 
     if (!command) {
-      console.error(`No command matching ${interaction.commandName} was found.`);
+      console.error(
+        `No command matching ${interaction.commandName} was found.`,
+      );
       return;
     }
     const { cooldowns } = interaction.client;
@@ -57,22 +61,23 @@ module.exports = {
     const cooldownAmount = (command.cooldown ?? defaultCooldownDuration) * 1000;
 
     if (timestamps.has(interaction.user.id)) {
-      const expirationTime = timestamps.get(interaction.user.id) + cooldownAmount;
-
+      const expirationTime =
+        timestamps.get(interaction.user.id) + cooldownAmount;
 
       if (now < expirationTime) {
         const expiredTimestamp = Math.round(expirationTime / 1000);
-        const cooldownMessage = await interaction.reply({ content: `Please wait, you are on a cooldown for \`${command.data.name}\`. You can use it again <t:${expiredTimestamp}:R>.`, ephemeral: true });
+        const cooldownMessage = await interaction.reply({
+          content: `Please wait, you are on a cooldown for \`${command.data.name}\`. You can use it again <t:${expiredTimestamp}:R>.`,
+          ephemeral: true,
+        });
 
-        const timeRemaining = expirationTime - now;        
-        
+        const timeRemaining = expirationTime - now;
+
         setTimeout(async () => {
           await cooldownMessage.delete();
         }, timeRemaining);
         return;
       }
-
-
     }
 
     timestamps.set(interaction.user.id, now);
@@ -83,9 +88,15 @@ module.exports = {
     } catch (error) {
       console.error(error);
       if (interaction.replied || interaction.deferred) {
-        await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
+        await interaction.followUp({
+          content: "There was an error while executing this command!",
+          ephemeral: true,
+        });
       } else {
-        await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+        await interaction.reply({
+          content: "There was an error while executing this command!",
+          ephemeral: true,
+        });
       }
     }
   },

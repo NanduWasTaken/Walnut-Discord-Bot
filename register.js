@@ -1,6 +1,6 @@
-const { REST, Routes } = require('discord.js');
+const { REST, Routes } = require("discord.js");
 const { TOKEN } = process.env;
-const { CLIENT_ID, GUILD_ID, dev_mode } = require('./config');
+const { CLIENT_ID, GUILD_ID, dev_mode } = require("./config");
 
 function registerCommands(commands) {
   const rest = new REST().setToken(TOKEN);
@@ -20,4 +20,3 @@ function registerCommands(commands) {
 }
 
 module.exports = registerCommands;
-
