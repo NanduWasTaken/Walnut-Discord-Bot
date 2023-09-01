@@ -11,5 +11,7 @@ node index.js
 # Contributers
 
 <a href="https://github.com/nanduwastaken/Walnut-Discord-Bot/graphs/contributors">
+  
   <img src="https://contrib.rocks/image?repo=nanduwastaken/Walnut-Discord-Bot" />
+  
 </a>
