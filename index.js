@@ -7,8 +7,6 @@ const fs = require("node:fs");
 const path = require("node:path");
 const db = require("./database");
 
-
-
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const commands = [];
@@ -60,4 +58,3 @@ process.on("unhandledRejection", (error) => {
 });
 
 client.login(TOKEN);
-                                    
