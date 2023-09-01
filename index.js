@@ -7,6 +7,8 @@ const fs = require("node:fs");
 const path = require("node:path");
 const db = require("./database");
 
+
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const commands = [];
@@ -23,10 +25,11 @@ for (const folder of commandFolders) {
     .filter((file) => file.endsWith(".js"));
   for (const file of commandFiles) {
     const filePath = path.join(commandsPath, file);
-    const command = require(filePath);
-    if ("data" in command && "execute" in command) {
-      commands.push(command.data.toJSON());
-      client.commands.set(command.data.name, command);
+    const cmd = require(filePath);
+    if ("data" in cmd && "execute" in cmd) {
+      commands.push(cmd.data.toJSON());
+      const properties = { folder, cmd };
+      client.commands.set(cmd.data.name, properties);
     } else {
       console.log(
         `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`,
@@ -57,3 +60,4 @@ process.on("unhandledRejection", (error) => {
 });
 
 client.login(TOKEN);
+                                    
