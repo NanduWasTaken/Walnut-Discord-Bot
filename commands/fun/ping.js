@@ -2,6 +2,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("disc
 const Guild = require('./../../models/guild');
 
 module.exports = {
+  cooldown: 5,
   data: new SlashCommandBuilder()
     .setName("ping")
     .setDescription("Replies with Pong!")  
