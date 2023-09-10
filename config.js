@@ -8,6 +8,12 @@ module.exports = {
     type: ActivityType.Listening,
     name: "Yeah this is an Activity",
   },
+  help_category_icon: {
+    fun: "😃",
+    moderation: "⚒️",
+    utility: "📙",
+    ai: "🤖",
+  },
   cmd_log_channel: "1122371464184737804",
   dev_mode: "true",
 };

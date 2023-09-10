@@ -6,16 +6,14 @@ const {
   ComponentType,
 } = require("discord.js");
 
+const config = require("./../../config");
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("help")
     .setDescription("Replies with help stuff!"),
   async execute(interaction) {
-    const emojis = {
-      fun: "😃",
-      moderation: "⚔️",
-      utility: "📙",
-    };
+    const emojis = config.help_category_icon;
 
     const commandInfo = interaction.client.commands.map((cmd) => {
       const folder = cmd.folder;
