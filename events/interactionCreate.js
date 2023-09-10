@@ -9,7 +9,7 @@ module.exports = {
     const command = interaction.client.commands.get(interaction.commandName);
     if (!command)
       return console.error(
-        `No command matching ${interaction.commandName} was found.`
+        `No command matching ${interaction.commandName} was found.`,
       );
 
     const { cooldowns } = interaction.client;

@@ -11,7 +11,7 @@ module.exports = {
     .setName("ping")
     .setDescription("Replies with Pong!"),
   /*.setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)*/ async execute(
-    interaction
+    interaction,
   ) {
     //console.log(interaction.guild);
     /*  const newUserInstance = new Guild({
@@ -28,7 +28,7 @@ module.exports = {
         interaction.client.ws.ping
       }ms\nRoundtrip Latency: ${
         sent.createdTimestamp - interaction.createdTimestamp
-      }ms`
+      }ms`,
     );
   },
 };

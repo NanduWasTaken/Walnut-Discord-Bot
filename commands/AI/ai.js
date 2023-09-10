@@ -5,7 +5,6 @@ const {
 } = require("discord.js");
 const ai = require("./../../models/ai.js");
 
-
 module.exports = {
   cooldown: 60,
   permissions: [
@@ -24,8 +23,8 @@ module.exports = {
             .setName("channel")
             .setDescription("Choose the channel for the AI to chat in.")
             .addChannelTypes(ChannelType.GuildText)
-            .setRequired(true)
-        )
+            .setRequired(true),
+        ),
     )
     .addSubcommand((subcommand) =>
       subcommand
@@ -39,9 +38,9 @@ module.exports = {
             .addChoices(
               { name: "GPT-3.5 Turbo", value: "gpt-3.5-turbo" },
               { name: "Meme", value: "gif_meme" },
-              { name: "Movie", value: "gif_movie" }
-            )
-        )
+              { name: "Movie", value: "gif_movie" },
+            ),
+        ),
     ),
   async execute(interaction, client) {
     if (interaction.options.getSubcommand() === "channel") {
@@ -70,7 +69,7 @@ module.exports = {
         await aiDoc.save();
 
         await interaction.editReply(
-          `AI Channel was set to <#${value}>. Make sure the bot has permission to chat in the channel.`
+          `AI Channel was set to <#${value}>. Make sure the bot has permission to chat in the channel.`,
         );
       } catch (err) {
         console.log(err);
