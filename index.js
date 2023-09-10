@@ -1,6 +1,5 @@
-const TOKEN = process.env["TOKEN"];
 const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
-const { token } = require("./config");
+const config = require("./config");
 const registerCommands = require("./register");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -62,4 +61,4 @@ process.on("unhandledRejection", (error) => {
   console.error("Unhandled promise rejection:", error);
 });
 
-client.login(TOKEN);
+client.login(config.TOKEN);
