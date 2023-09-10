@@ -13,10 +13,12 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("UserInfo")
     .setDescription("Shows User Info.")
-    .addUserOption(option => option.setName('target').setDescription('The user').setRequired(true)),
+    .addUserOption((option) =>
+      option.setName("target").setDescription("The user").setRequired(true),
+    ),
   execute(interaction) {
     interaction.deferReply({ ephemeral: true });
-    const target = interaction.options.getUser('target');
+    const target = interaction.options.getUser("target");
     const member = interaction.guild.members.cache.get(target.id);
     const name = !/^[a-z0-9._]+$/.test(member.user.username)
       ? `${member.user.tag}`
