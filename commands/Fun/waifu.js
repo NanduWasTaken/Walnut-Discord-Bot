@@ -29,7 +29,6 @@ module.exports = {
   async execute(interaction) {
     const tag = interaction.options.getString("tags");
 
-
     try {
       const sent = await interaction.deferReply({ fetchReply: true });
 

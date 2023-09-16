@@ -14,24 +14,18 @@ module.exports = {
     .setName("help")
     .setDescription("Replies with help stuff!"),
   async execute(interaction) {
-
     const emojis = config.help_category_icon;
-
-
-
 
     let rawInfo = [];
     let commandInfo = [];
     let selectInfo = [];
 
-
     interaction.client.commands.map((cmd) => {
       rawInfo.push({
         folder: cmd.folder,
         cmd: cmd.cmd,
-      })
+      });
     });
-
 
     rawInfo.forEach((cmd) => {
       const folder = cmd.folder.toLowerCase();
@@ -46,7 +40,6 @@ module.exports = {
         });
       }
     });
-
 
     const select = new StringSelectMenuBuilder()
       .setCustomId("help")
@@ -65,7 +58,6 @@ module.exports = {
       time: 3_600_000,
     });
 
-
     collector.on("collect", async (i) => {
       const selection = i.values[0];
 
@@ -74,8 +66,8 @@ module.exports = {
       selectInfo = [];
 
       // Filter rawInfo to get only the objects with matching 'folder' property
-      const matchingCommands = rawInfo.filter((cmd) =>
-        cmd.folder.toLowerCase() === selection
+      const matchingCommands = rawInfo.filter(
+        (cmd) => cmd.folder.toLowerCase() === selection,
       );
 
       // Push the matching objects into selectInfo
@@ -87,7 +79,6 @@ module.exports = {
           inline: true,
         });
       });
-
 
       const embed = new EmbedBuilder()
         .setAuthor({
@@ -106,8 +97,6 @@ module.exports = {
         embeds: [embed],
       });
     });
-
-
 
     return;
   },
