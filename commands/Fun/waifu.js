@@ -30,7 +30,6 @@ module.exports = {
 
   const tag = interaction.options.getString('tags');
 
-    const tag = interaction.options.getString("tags");
 
   try {
     const sent = await interaction.deferReply({ fetchReply: true });
