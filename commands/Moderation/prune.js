@@ -1,10 +1,7 @@
 const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
-  permissions: [
-    'ManageChannels',
-    'ManageMessages',
-  ],
+  permissions: ["ManageChannels", "ManageMessages"],
   data: new SlashCommandBuilder()
     .setName("prune")
     .setDescription("Prune up to 99 messages.")
