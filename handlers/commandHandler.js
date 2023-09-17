@@ -2,10 +2,8 @@ const registerCommands = require("./../register");
 const fs = require("node:fs");
 const path = require("node:path");
 
-
 module.exports = {
   execute(client) {
-
     const commands = [];
 
     const foldersPath = path.join(__dirname, "../commands");
@@ -31,8 +29,6 @@ module.exports = {
       }
     }
 
-
     registerCommands(commands);
-
   },
 };

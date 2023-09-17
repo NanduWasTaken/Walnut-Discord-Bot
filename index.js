@@ -12,12 +12,8 @@ const client = new Client({
   ],
 });
 
-
 client.commands = new Collection();
 client.cooldowns = new Collection();
-
-
-
 
 const handlerPath = path.join(__dirname, "handlers");
 const handlerFiles = fs
@@ -28,9 +24,9 @@ for (const file of handlerFiles) {
   const filePath = path.join(handlerPath, file);
   const handler = require(filePath);
   if (handler.execute) {
-    handler.execute(client)
+    handler.execute(client);
   } else {
-    console.error(`[❌] Failed To Load ${file} Handler.`)
+    console.error(`[❌] Failed To Load ${file} Handler.`);
   }
 }
 
