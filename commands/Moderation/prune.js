@@ -2,8 +2,8 @@ const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   permissions: [
-    PermissionsBitField.Flags.ManageChannels,
-    PermissionsBitField.Flags.ManageMessages,
+    'ManageChannels',
+    'ManageMessages',
   ],
   data: new SlashCommandBuilder()
     .setName("prune")

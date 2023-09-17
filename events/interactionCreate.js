@@ -47,7 +47,7 @@ module.exports = {
         await command.cmd.execute(interaction);
       } else {
         await interaction.reply({
-          content: `You don't have permission to use this command.`,
+          content: `You need ${command.cmd.permissions.join(', ')} to use this command.`,
           ephemeral: true,
         });
       }
