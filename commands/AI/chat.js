@@ -1,7 +1,5 @@
 const {
-  SlashCommandBuilder,
-  PermissionFlagsBits,
-  EmbedBuilder,
+  SlashCommandBuilder
 } = require("discord.js");
 const fetch = require("@replit/node-fetch");
 

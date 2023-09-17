@@ -1,5 +1,4 @@
 const { Events, PermissionsBitField } = require("discord.js");
-const config = require("./../config");
 
 module.exports = {
   name: Events.InteractionCreate,
@@ -9,7 +8,7 @@ module.exports = {
     const command = interaction.client.commands.get(interaction.commandName);
     if (!command)
       return console.error(
-        `No command matching ${interaction.commandName} was found.`,
+        `[❌] No command matching ${interaction.commandName} was found.`,
       );
 
     const { cooldowns } = interaction.client;
