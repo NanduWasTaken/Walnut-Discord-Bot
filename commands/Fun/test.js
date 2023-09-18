@@ -1,12 +1,10 @@
 const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
-  cooldown: 5,  
+  cooldown: 5,
   permissions: ["ManageChannels", "ManageMessages"],
-  data: new SlashCommandBuilder()
-    .setName("test")
-    .setDescription("Test!"),
+  data: new SlashCommandBuilder().setName("test").setDescription("Test!"),
   async execute(interaction) {
-    interaction.reply('hy')
+    interaction.reply("hy");
   },
 };
