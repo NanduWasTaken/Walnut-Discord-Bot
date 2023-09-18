@@ -40,18 +40,37 @@ module.exports = {
     setTimeout(() => timestamps.delete(interaction.user.id), defaultCooldown);
 
     try {
-      if (
-        !command.cmd.permissions ||
-        interaction.member.permissions.has(command.cmd.permissions)
-      ) {
+
+      /*const permissionFlagsArray = command.cmd.permissions.map(permission => {
+        const permissionFlag = PermissionsBitField.Flags[permission];
+        if (permissionFlag !== undefined) {
+          return permissionFlag;
+        }
+      });*/
+
+      const permissionFlagsArray = (command.cmd.permissions || [])
+  .map(permission => {
+    const permissionFlag = PermissionsBitField.Flags[permission];
+    if (permissionFlag !== undefined) {
+      return permissionFlag;
+    }
+  })
+  .filter(permissionFlag => permissionFlag !== undefined);
+
+
+      if (!command.cmd.permissions || interaction.member.permissions.has(permissionFlagsArray)) {
+
         await command.cmd.execute(interaction);
+
       } else {
+
         await interaction.reply({
           content: `You need ${command.cmd.permissions.join(
             ", ",
           )} to use this command.`,
           ephemeral: true,
         });
+
       }
     } catch (error) {
       console.error(error);
