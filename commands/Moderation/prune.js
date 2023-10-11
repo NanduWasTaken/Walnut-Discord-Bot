@@ -22,9 +22,10 @@ module.exports = {
     const amount = interaction.options.getInteger("amount");
 
     if (amount <= 1 || amount >= 100) {
-      return interaction.reply(
-        "You can only delete between 1 and 100 messages.",
-      );
+      return interaction.reply({
+        content: "You can only delete between 1 and 100 messages.",
+        empheral: true,
+      });
     }
 
     const messages = await interaction.channel.messages.fetch({
@@ -40,7 +41,10 @@ module.exports = {
       })
       .catch((error) => {
         console.error(error);
-        interaction.reply("There was an error while deleting messages.");
+        interaction.reply({
+          content: "There was an error while deleting messages.",
+          empheral: true,
+        });
       });
     return;
   },

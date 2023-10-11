@@ -4,7 +4,6 @@ module.exports = {
   TOKEN: process.env.TOKEN,
   DB_URI: process.env.DB,
   CLIENT_ID: "1138446687287910601",
-
   presence: {
     status: "online",
     type: ActivityType.Listening,
