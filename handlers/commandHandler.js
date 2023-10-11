@@ -23,7 +23,7 @@ module.exports = {
           client.commands.set(cmd.data.name, properties);
         } else {
           console.log(
-            `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`,
+            `[❓] The command at ${filePath} is missing a required "data" or "execute" property.`,
           );
         }
       }

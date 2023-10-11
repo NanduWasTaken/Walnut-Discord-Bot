@@ -1,10 +1,20 @@
-const { SlashCommandBuilder } = require("discord.js");
+const { SlashCommandBuilder, PermissionsBitField } = require("discord.js");
 
 module.exports = {
   cooldown: 5,
-  permissions: ["ManageChannels", "ManageMessages"],
-  data: new SlashCommandBuilder().setName("test").setDescription("Test!"),
+  botPermissions: [
+    PermissionsBitField.Flags.ManageChannels,
+    PermissionsBitField.Flags.ManageMessages,
+  ],
+  userPermissions: [
+    PermissionsBitField.Flags.ManageChannels,
+    PermissionsBitField.Flags.ManageMessages,
+  ],
+  data: new SlashCommandBuilder()
+    .setName("test")
+    .setDescription("Test!"),
   async execute(interaction) {
     interaction.reply("hy");
+    return;
   },
 };

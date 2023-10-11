@@ -1,4 +1,4 @@
-const { Events, PermissionsBitField } = require("discord.js");
+const { Events } = require("discord.js");
 
 module.exports = {
   name: Events.InteractionCreate,
@@ -38,46 +38,44 @@ module.exports = {
 
     timestamps.set(interaction.user.id, now);
     setTimeout(() => timestamps.delete(interaction.user.id), defaultCooldown);
+    
 
     try {
-      /*const permissionFlagsArray = command.cmd.permissions.map(permission => {
-        const permissionFlag = PermissionsBitField.Flags[permission];
-        if (permissionFlag !== undefined) {
-          return permissionFlag;
-        }
-      });*/
 
-      const permissionFlagsArray = (command.cmd.permissions || [])
-        .map((permission) => {
-          const permissionFlag = PermissionsBitField.Flags[permission];
-          if (permissionFlag !== undefined) {
-            return permissionFlag;
-          }
-        })
-        .filter((permissionFlag) => permissionFlag !== undefined);
-
-      if (
-        !command.cmd.permissions ||
-        interaction.member.permissions.has(permissionFlagsArray)
-      ) {
-        await command.cmd.execute(interaction);
-      } else {
-        await interaction.reply({
-          content: `You need ${command.cmd.permissions.join(
-            ", ",
-          )} to use this command.`,
+      const botPermissions = command.cmd.botPermissions;
+      const userPermissions = command.cmd.userPermissions;
+      
+      
+      if (command.cmd.userPermissions || !interaction.member.permissions.has(userPermissions)) {  
+        return await interaction.reply({
+          content: `You don't have enough permissions to run this command.`,
           ephemeral: true,
         });
       }
+
+      if (command.cmd.botPermissions || !interaction.guild.me.has(botPermissions)) {
+        return await interaction.reply({
+          content: `I don't have enough permissions to execute this command.`,
+          ephemeral: true,
+        });
+      }
+      
+      await command.cmd.execute(interaction);    
+      
     } catch (error) {
+
       console.error(error);
-      const responseContent =
-        "There was an error while executing this command!";
-      const responseOptions = { content: responseContent, ephemeral: true };
+      
       if (interaction.replied || interaction.deferred) {
-        await interaction.followUp(responseOptions);
+        return await interaction.followUp({
+          content: "There was an error while executing this command!",
+          ephemeral: true
+        });
       } else {
-        await interaction.reply(responseOptions);
+        return await interaction.reply({
+          content: "There was an error while executing this command!",
+          ephemeral: true
+        });
       }
     }
   },
