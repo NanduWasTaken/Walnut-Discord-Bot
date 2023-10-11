@@ -38,43 +38,44 @@ module.exports = {
 
     timestamps.set(interaction.user.id, now);
     setTimeout(() => timestamps.delete(interaction.user.id), defaultCooldown);
-    
 
     try {
-
       const botPermissions = command.cmd.botPermissions;
       const userPermissions = command.cmd.userPermissions;
-      
-      
-      if (command.cmd.userPermissions || !interaction.member.permissions.has(userPermissions)) {  
+
+      if (
+        command.cmd.userPermissions ||
+        !interaction.member.permissions.has(userPermissions)
+      ) {
         return await interaction.reply({
           content: `You don't have enough permissions to run this command.`,
           ephemeral: true,
         });
       }
 
-      if (command.cmd.botPermissions || !interaction.guild.me.has(botPermissions)) {
+      if (
+        command.cmd.botPermissions ||
+        !interaction.guild.me.has(botPermissions)
+      ) {
         return await interaction.reply({
           content: `I don't have enough permissions to execute this command.`,
           ephemeral: true,
         });
       }
-      
-      await command.cmd.execute(interaction);    
-      
-    } catch (error) {
 
+      await command.cmd.execute(interaction);
+    } catch (error) {
       console.error(error);
-      
+
       if (interaction.replied || interaction.deferred) {
         return await interaction.followUp({
           content: "There was an error while executing this command!",
-          ephemeral: true
+          ephemeral: true,
         });
       } else {
         return await interaction.reply({
           content: "There was an error while executing this command!",
-          ephemeral: true
+          ephemeral: true,
         });
       }
     }

@@ -10,9 +10,7 @@ module.exports = {
     PermissionsBitField.Flags.ManageChannels,
     PermissionsBitField.Flags.ManageMessages,
   ],
-  data: new SlashCommandBuilder()
-    .setName("test")
-    .setDescription("Test!"),
+  data: new SlashCommandBuilder().setName("test").setDescription("Test!"),
   async execute(interaction) {
     interaction.reply("hy");
     return;
