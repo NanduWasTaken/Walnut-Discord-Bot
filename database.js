@@ -7,7 +7,7 @@ mongoose.connect(config.DB_URI, {
 });
 
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
+db.on("error", console.error.bind(console, "[❌] Mongo DB Error: "));
 db.once("open", function () {
   console.log("[✅] MongoDB is Online!");
 });

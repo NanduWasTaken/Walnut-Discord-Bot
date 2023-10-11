@@ -33,7 +33,7 @@ module.exports = {
 
       if (!existingEntry) {
         commandInfo.push({
-          label: cmd.folder,
+          label: cmd.folder.charAt(0).toUpperCase() + cmd.folder.slice(1),
           value: folder,
           description: `Commands From ${cmd.folder} Category.`,
           emoji: emojis[folder] || null,
