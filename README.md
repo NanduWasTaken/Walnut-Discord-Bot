@@ -24,7 +24,7 @@
 
 > You may not claim this as your own! The original source was created by [NanduWasTaken](https://github.com/NanduWasTaken). You should credit the orginal owners on your project if you are using this bot.
 
-> Discord-Bot is a multipurpose Discord bot base in [Discord.js](https://github.com/Discordjs/discordjs)
+> Walnut is a multipurpose Discord bot base in [Discord.js](https://github.com/Discordjs/discordjs)
 > If you like this repository, feel free to leave a star ⭐ to motivate me!
 
 <!-- Features -->
