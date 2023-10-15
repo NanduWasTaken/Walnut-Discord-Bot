@@ -12,15 +12,11 @@
   </p>
 </p>
 
-
-
-
-
 [![Run on Repl.it](https://repl.it/badge/github/NanduWasTaken/Walnut-Discord-Bot)](https://replit.com/@NanduWasTaken/Walnuut?v=1)
 
-
 ## Features
-- [x] Slash Commands 
+
+- [x] Slash Commands
 - [x] Upto date with Discord.js v14
 - [x] Utility Commands
 - [x] Fun Commands
@@ -28,6 +24,7 @@
 - [x] Don't wanna host it yourself? [Use our public bot](https://discord.com/api/oauth2/authorize?client_id=&permissions=8&scope=bot%20applications.commands)
 
 # Requirements
+
 - NodeJs v17+
 - Discord Token. Get it from [Discord Developers Portal](https://discord.com/developers/applications)
 - Mongo Database URL. Get it from [MongoDB](https://cloud.mongodb.com/v2/635277bf9f5c7b5620db28a4#clusters)
@@ -36,15 +33,19 @@
 ## Start
 
 Install the Required [Packages]()
+
 ```bash
 npm i
 ```
+
 Start Your Bot
+
 ```bash
 node index.js
 ```
 
 ## Used Pakages & Modules
+
 - Discord.js v14+
 - Replit Node Fetch (For Common JS Support)
 - Mongoose (For Mongo DB Database)
