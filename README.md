@@ -12,15 +12,18 @@
     <br />
     <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Report Bug</a>
     <bold>•</bold>
-    <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Request Feature</a>
+    <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Request Feature</a>  
+    <bold>•</bold>
+    <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Questions</a>
   </p>
 </p>
 
 [![Run on Repl.it](https://repl.it/badge/github/NanduWasTaken/Walnut-Discord-Bot)](https://replit.com/@NanduWasTaken/Walnuut?v=1)
 
-### <img src="https://cdn.discordapp.com/emojis/1055803759831294013.png" width="20px" height="20px"> 》Notice
+### Notice
 
 > You may not claim this as your own! The original source was created by [NanduWasTaken](https://github.com/NanduWasTaken). You should credit the orginal owners on your project if you are using this bot.
+
 > Discord-Bot is a multipurpose Discord bot base in [Discord.js](https://github.com/Discordjs/discordjs)
 > If you like this repository, feel free to leave a star ⭐ to motivate me!
 
