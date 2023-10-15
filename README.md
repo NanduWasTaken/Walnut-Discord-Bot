@@ -32,7 +32,7 @@
 
 ## Start
 
-Install the Required [Packages]()
+Install the Required [Packages](https://github.com/NanduWasTaken/Walnut-Discord-Bot/tree/main#used-pakages--modules)
 
 ```bash
 npm i
