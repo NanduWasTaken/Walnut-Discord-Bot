@@ -1,4 +1,4 @@
-![EA1ytssf0ZroNRhiP0W1--3--sk66o]()
+
 <!-- Banner -->
 <center><a herf="https://github.com/NanduWasTaken/Walnut-Discord-Bot/tree/main#walnut"><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Walnut&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></a></center>
 
