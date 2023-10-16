@@ -23,10 +23,11 @@
   </p>
 </p>
 
+
 <!-- Replit Logo -->
-<p align="center">
 [![Run on Repl.it](https://repl.it/badge/github/NanduWasTaken/Walnut-Discord-Bot)](https://replit.com/@NanduWasTaken/Walnuut?v=1)
-</p>
+
+
 
 ### Notice
 
@@ -46,23 +47,29 @@
 - [x] Easy to use
 - [x] Don't wanna host it yourself? [Use our public bot](https://discord.com/api/oauth2/authorize?client_id=&permissions=8&scope=bot%20applications.commands)
 
-# Requirements
+## Requirements
 
 - NodeJs v17+. Download it from [NodeJS](https://nodejs.org/en/download/current)
 - Discord Token. Get it from [Discord Developers Portal](https://discord.com/developers/applications)
 - Mongo Database URL. Get it from [MongoDB](https://cloud.mongodb.com/v2/635277bf9f5c7b5620db28a4#clusters)
 - ClientID (For Loading Slash Commands)
 
+
+
 ## Start
 
-Install the Required [Packages](https://github.com/NanduWasTaken/Walnut-Discord-Bot/tree/main#used-pakages--modules)
+Clone the repo by running
+```bash
+git clone https://github.com/NanduWasTaken/Walnut-Discord-Bot
+```
 
+Install the Required [Packages](https://github.com/NanduWasTaken/Walnut-Discord-Bot/tree/main#used-pakages--modules)
 ```bash
 npm i
 ```
 
+Fill in Your Bot Information in the ```config.js``` file &
 Start Your Bot
-
 ```bash
 node index.js
 ```
@@ -73,7 +80,7 @@ node index.js
 - Replit Node Fetch (For Common JS Support)
 - Mongoose (For Mongo DB Database)
 
-# Contributers
+## Contributers
 
 <a href="https://github.com/nanduwastaken/Walnut-Discord-Bot/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=nanduwastaken/Walnut-Discord-Bot" />
