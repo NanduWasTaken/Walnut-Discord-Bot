@@ -23,11 +23,9 @@
   </p>
 </p>
 
-
 <!-- Replit Logo -->
+
 [![Run on Repl.it](https://repl.it/badge/github/NanduWasTaken/Walnut-Discord-Bot)](https://replit.com/@NanduWasTaken/Walnuut?v=1)
-
-
 
 ### Notice
 
@@ -54,22 +52,23 @@
 - Mongo Database URL. Get it from [MongoDB](https://cloud.mongodb.com/v2/635277bf9f5c7b5620db28a4#clusters)
 - ClientID (For Loading Slash Commands)
 
-
-
 ## Start
 
 Clone the repo by running
+
 ```bash
 git clone https://github.com/NanduWasTaken/Walnut-Discord-Bot
 ```
 
 Install the Required [Packages](https://github.com/NanduWasTaken/Walnut-Discord-Bot/tree/main#used-pakages--modules)
+
 ```bash
 npm i
 ```
 
-Fill in Your Bot Information in the ```config.js``` file &
+Fill in Your Bot Information in the `config.js` file &
 Start Your Bot
+
 ```bash
 node index.js
 ```
