@@ -23,7 +23,12 @@
   </p>
 </p>
 
+
+<!-- Replit Logo -->
+<p align="center">
 [![Run on Repl.it](https://repl.it/badge/github/NanduWasTaken/Walnut-Discord-Bot)](https://replit.com/@NanduWasTaken/Walnuut?v=1)
+</p>
+
 
 ### Notice
 
