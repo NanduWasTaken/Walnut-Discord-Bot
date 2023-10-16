@@ -2,11 +2,9 @@
 <center><a herf="https://github.com/NanduWasTaken/Walnut-Discord-Bot/tree/main#walnut"><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Walnut&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></a></center>
 
 <!-- Logo -->
-<div style="width: 200px; height: 200px; overflow: hidden; border-radius: 50%;">
   <a href="https://github.com/nanduwastaken/walnut-Discord-Bot">
-    <img src="https://github.com/NanduWasTaken/Walnut-Discord-Bot/assets/89532571/83ed5c41-0afe-493a-87f0-5e4c8b73d33f" alt="Walnut" style="width: 100%; height: 100%;">
+    <img src="https://github.com/NanduWasTaken/Walnut-Discord-Bot/assets/89532571/83ed5c41-0afe-493a-87f0-5e4c8b73d33f" alt="Walnut" width="100" height="100">
   </a>
-</div>
 
 <!-- Title & Description -->
   <h1 align="center">Walnut</h1>
