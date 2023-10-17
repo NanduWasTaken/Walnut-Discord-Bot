@@ -22,7 +22,6 @@
     <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Questions</a>
   </p>
 
-
 <!-- Replit Logo -->
 
 [![Run on Repl.it](https://repl.it/badge/github/NanduWasTaken/Walnut-Discord-Bot)](https://replit.com/@NanduWasTaken/Walnuut?v=1)
