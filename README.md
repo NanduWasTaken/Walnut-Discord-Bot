@@ -12,16 +12,16 @@
   <h1 align="center">Walnut</h1>
 
   <p align="center">
-    Walnut is an easy to use, advanced Discord multipurpose bot containing lot of commands.<br> It can do Moderation, Tickets, Radio, Games, Giveaways, Customisation, Economy, Leveling, Invites, Messages, Utilities, Suggestions, Server Stats etc.<br> Unfortunately the owners stopped at the peak and decided to put the source online of which I made an updated version.
+    Walnut is an easy to use, advanced Discord multipurpose bot containing lot of commands.<br> It can do Moderation, Tickets, Radio, Games, Giveaways, Customisation, Economy, Leveling, Invites, Messages, Utilities, Suggestions, Server Stats etc.<br> Unfortunately the owners stopped at the peak and decided to put the source online of which I made an updated version. 
     <br />
-    <br />
+    <br /> 
     <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Report Bug</a>
     <bold>•</bold>
     <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Request Feature</a>  
     <bold>•</bold>
     <a href="https://github.com/nanduwastaken/walnut-discord-bot/issues">Questions</a>
   </p>
-</p>
+
 
 <!-- Replit Logo -->
 
