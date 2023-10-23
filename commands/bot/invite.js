@@ -3,6 +3,10 @@ const {
   EmbedBuilder,
   OAuth2Scopes,
   PermissionFlagsBits,
+  ButtonBuilder,
+  ButtonStyle,
+  ActionRowBuilder,
+  ComponentType,
 } = require("discord.js");
 const config = require("./../../config.js");
 
@@ -12,6 +16,7 @@ module.exports = {
     .setName("invite")
     .setDescription("Get An Invite Link of the Bot!"),
   async execute(interaction) {
+    
     const inviteLink = interaction.client.generateInvite({
       permissions: [PermissionFlagsBits.Administrator],
       scopes: [OAuth2Scopes.Bot],
@@ -30,8 +35,25 @@ module.exports = {
       .setTimestamp()
       .setFooter({ text: `Requested by ${interaction.user.username}` });
 
+
+    const link = new ButtonBuilder()
+			.setLabel('Invite Me')
+      .setURL(inviteLink)
+      .setEmoji('📥')
+			.setStyle(ButtonStyle.Link);
+
+    const supportServer = new ButtonBuilder()
+			.setLabel('Support Server')
+      .setURL(config.supportServer)
+      .setEmoji('🗂️')
+			.setStyle(ButtonStyle.Link);
+
+    const row = new ActionRowBuilder()
+			.addComponents(link, supportServer);
+    
     await interaction.reply({
       embeds: [embed],
+      components: [row],
     });
 
     return;
