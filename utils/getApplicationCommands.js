@@ -1,18 +1,16 @@
 module.exports = {
   async get(client, guildId) {
-
     const applicationCommands = [];
     let rawApplicationCommands;
-    
+
     const guild = await client.guilds.cache.get(guildId);
-    
+
     if (guildId) {
       rawApplicationCommands = await guild.commands.fetch();
     } else {
       rawApplicationCommands = await client.application.commands.fetch();
     }
-  
-    
+
     rawApplicationCommands.forEach((cmd) => {
       applicationCommands.push({
         options: cmd.options,
@@ -24,7 +22,7 @@ module.exports = {
         default_member_permissions: cmd.default_member_permissions,
         dm_permission: cmd.dm_permission,
         nsfw: cmd.nsfw,
-      })
+      });
     });
 
     return applicationCommands;

@@ -16,7 +16,6 @@ client.commands = new Collection();
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
-
 const handlerPath = path.join(__dirname, "handlers");
 const handlerFiles = fs
   .readdirSync(handlerPath)
@@ -32,11 +31,8 @@ for (const file of handlerFiles) {
   }
 }
 
-
-
 process.on("unhandledRejection", (error) => {
   console.error("[❌] Error: ", error);
 });
-
 
 client.login(config.TOKEN);

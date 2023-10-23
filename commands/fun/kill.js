@@ -1,19 +1,20 @@
 const { SlashCommandBuilder, PermissionsBitField } = require("discord.js");
-const config = require('./../../config.js');
+const config = require("./../../config.js");
 
 module.exports = {
   cooldown: 5,
   data: new SlashCommandBuilder()
     .setName("kill")
     .setDescription("Kill Some Random Dude!")
-    .addUserOption(option =>
-      option.setName('user')
-            .setDescription('Your Target To Kill')
-			    	.setRequired(true)),
+    .addUserOption((option) =>
+      option
+        .setName("user")
+        .setDescription("Your Target To Kill")
+        .setRequired(true),
+    ),
   async execute(interaction) {
-
     const author = interaction.user;
-    const target = interaction.options.getUser('user');
+    const target = interaction.options.getUser("user");
     const kills = [
       `After a long day, plops down on the couch with ${target} and turns on The Big Bang Theory. After a Sheldon Cooper joke, ${target} laughs uncontrollably as they die.`,
       `${author} Alt+F4'd ${target}.exe!`,
@@ -207,24 +208,22 @@ module.exports = {
       `While performing colonoscopy on an elephant, ${target} gets their head stuck in the elephants rectum and chokes.`,
     ];
 
-    
     if (target.id == author.id) {
-      return interaction.reply("You Can't Kill YourSelf Lol!")
+      return interaction.reply("You Can't Kill YourSelf Lol!");
     }
 
     if (target.id == config.ownerId) {
-      return interaction.reply("You Can't Kill The Owner Of The Bot!")
+      return interaction.reply("You Can't Kill The Owner Of The Bot!");
     }
-     
+
     if (target.id == interaction.client.user.id) {
-      return interaction.reply("You Can't Kill Me Lol!")
+      return interaction.reply("You Can't Kill Me Lol!");
     }
 
     if (target.bot) {
-      return interaction.reply("Try Killing An Actual Person Next Time")
+      return interaction.reply("Try Killing An Actual Person Next Time");
     }
-    
+
     return interaction.reply(kills[Math.floor(Math.random() * kills.length)]);
-    
   },
 };

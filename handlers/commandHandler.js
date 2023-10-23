@@ -17,7 +17,9 @@ module.exports = {
         if ("data" in cmd && "execute" in cmd) {
           const duplicateCommand = client.commands.get(cmd.data.name);
           if (duplicateCommand) {
-            console.warn(`[❓] Duplicate Command Ignored: ${cmd.data.name} command in ${filePath}`)
+            console.warn(
+              `[❓] Duplicate Command Ignored: ${cmd.data.name} command in ${filePath}`,
+            );
             continue;
           }
           const properties = { folder, cmd };

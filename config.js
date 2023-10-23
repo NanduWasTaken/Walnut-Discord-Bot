@@ -11,6 +11,6 @@ module.exports = {
     bot: "💥",
   },
   guildId: "1122371463060668489",
-  ownerId: '852381000528035890',
-  supportServer: "https://discord.gg/nPCNpEPWTh"
+  ownerId: "852381000528035890",
+  supportServer: "https://discord.gg/nPCNpEPWTh",
 };

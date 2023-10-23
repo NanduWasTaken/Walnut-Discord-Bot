@@ -35,13 +35,11 @@ module.exports = {
       };
 
       const queryParams = new URLSearchParams(params);
-      
+
       const requestUrl = `${apiUrl}?${queryParams}`;
 
       const response = await fetch(requestUrl);
-      
 
-            
       if (response.status !== 200) {
         throw new Error(`API request failed with status ${response.status}`);
       }

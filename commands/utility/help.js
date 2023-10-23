@@ -84,23 +84,23 @@ module.exports = {
         })
         .setTitle(`Category ${selection.toUpperCase()}`)
         .addFields(selectInfo)
-        .setColor('Random')
+        .setColor("Random")
         .setFooter({
           text: `Requested by ${i.user.username}`,
         });
 
-       await interaction.editReply({
+      await interaction.editReply({
         components: [row],
         embeds: [embed],
       });
-			
+
       i.deferUpdate();
     });
 
     collector.on("end", async () => {
       interaction.editReply({
         components: [],
-      })
+      });
     });
 
     return;

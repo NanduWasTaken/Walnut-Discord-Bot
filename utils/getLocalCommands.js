@@ -16,10 +16,12 @@ module.exports = {
         const filePath = path.join(commandsPath, file);
         const cmd = require(filePath);
         if ("data" in cmd && "execute" in cmd) {
-          const duplicateCommand = commands.find(command => command.name === cmd.data.name);
+          const duplicateCommand = commands.find(
+            (command) => command.name === cmd.data.name,
+          );
           if (duplicateCommand) {
             continue;
-          }       
+          }
           commands.push(cmd.data.toJSON());
         } else {
           console.log(
