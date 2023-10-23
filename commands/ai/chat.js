@@ -30,7 +30,6 @@ module.exports = {
     const response = await fetch(requestUrl);
 
     if (response.status !== 200) {
-      throw new Error(`API request failed with status ${response.status}`);
       return interaction.editReply(
         "We Are Having Trouble With The Api, Please Try Again.",
       );
