@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
-const fetch = require("@replit/node-fetch");
+const { fetch } = require("undici");
 
 module.exports = {
   cooldown: 5,
@@ -26,7 +26,7 @@ module.exports = {
     const tag = interaction.options.getString("tags");
 
     try {
-      const sent = await interaction.deferReply({ fetchReply: true });
+      const sent = await interaction.deferReply();
 
       const apiUrl = "https://api.waifu.im/search";
       const params = {
@@ -35,10 +35,13 @@ module.exports = {
       };
 
       const queryParams = new URLSearchParams(params);
+      
       const requestUrl = `${apiUrl}?${queryParams}`;
 
       const response = await fetch(requestUrl);
+      
 
+            
       if (response.status !== 200) {
         throw new Error(`API request failed with status ${response.status}`);
       }

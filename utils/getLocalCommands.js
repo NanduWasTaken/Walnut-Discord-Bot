@@ -2,7 +2,8 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 module.exports = {
-  execute(client) {
+  get() {
+    const commands = [];
     const foldersPath = path.join(__dirname, "../commands");
     const commandFolders = fs.readdirSync(foldersPath);
 
@@ -15,19 +16,18 @@ module.exports = {
         const filePath = path.join(commandsPath, file);
         const cmd = require(filePath);
         if ("data" in cmd && "execute" in cmd) {
-          const duplicateCommand = client.commands.get(cmd.data.name);
+          const duplicateCommand = commands.find(command => command.name === cmd.data.name);
           if (duplicateCommand) {
-            console.warn(`[❓] Duplicate Command Ignored: ${cmd.data.name} command in ${filePath}`)
             continue;
-          }
-          const properties = { folder, cmd };
-          client.commands.set(cmd.data.name, properties);
+          }       
+          commands.push(cmd.data.toJSON());
         } else {
-          console.warn(
+          console.log(
             `[❓] The command at ${filePath} is missing a required "data" or "execute" property.`,
           );
         }
       }
     }
+    return commands;
   },
 };

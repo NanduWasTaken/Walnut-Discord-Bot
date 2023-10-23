@@ -1,7 +1,6 @@
 const {
   ActionRowBuilder,
   StringSelectMenuBuilder,
-  StringSelectMenuOptionBuilder,
   SlashCommandBuilder,
   ComponentType,
   EmbedBuilder,
@@ -55,13 +54,12 @@ module.exports = {
 
     const collector = response.createMessageComponentCollector({
       componentType: ComponentType.StringSelect,
-      time: 3_600_000,
+      time: 300_000,
     });
 
     collector.on("collect", async (i) => {
       const selection = i.values[0];
 
-      i.deferUpdate();
       // Clear the selectInfo array
       selectInfo = [];
 
@@ -76,7 +74,6 @@ module.exports = {
           name: cmd.cmd.data.name,
           value: cmd.cmd.data.description,
           folder: cmd.folder,
-          inline: true,
         });
       });
 
@@ -87,15 +84,23 @@ module.exports = {
         })
         .setTitle(`Category ${selection.toUpperCase()}`)
         .addFields(selectInfo)
-        .setColor("#00b0f4")
+        .setColor('Random')
         .setFooter({
           text: `Requested by ${i.user.username}`,
         });
 
-      await interaction.editReply({
+       await interaction.editReply({
         components: [row],
         embeds: [embed],
       });
+			
+      i.deferUpdate();
+    });
+
+    collector.on("end", async () => {
+      interaction.editReply({
+        components: [],
+      })
     });
 
     return;

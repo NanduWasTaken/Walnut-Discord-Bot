@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
-const fetch = require("@replit/node-fetch");
+const { fetch } = require("undici");
 
 module.exports = {
   cooldown: 5,

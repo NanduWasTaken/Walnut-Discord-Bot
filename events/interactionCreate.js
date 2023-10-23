@@ -6,10 +6,13 @@ module.exports = {
     if (!interaction.isChatInputCommand()) return;
 
     const command = interaction.client.commands.get(interaction.commandName);
-    if (!command)
-      return console.error(
+    
+    if (!command) {
+      console.error(
         `[❌] No command matching ${interaction.commandName} was found.`,
       );
+      return interaction.reply("No command matching this name was found.")
+    }
 
     const { cooldowns } = interaction.client;
 
@@ -39,7 +42,9 @@ module.exports = {
     timestamps.set(interaction.user.id, now);
     setTimeout(() => timestamps.delete(interaction.user.id), defaultCooldown);
 
+    
     try {
+    
       const botPermissions = command.cmd.botPermissions;
       const userPermissions = command.cmd.userPermissions;
 
@@ -58,11 +63,11 @@ module.exports = {
           });
         }
       }
-
+      
       await command.cmd.execute(interaction);
+      
     } catch (error) {
-      console.error(error);
-
+      console.error(`[❌] Error While Executing Command: ${interaction.commandName}`, error);
       if (interaction.replied || interaction.deferred) {
         return await interaction.followUp({
           content: "There was an error while executing this command!",

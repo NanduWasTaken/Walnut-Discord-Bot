@@ -1,19 +1,19 @@
 {
-  "name": "nodejs",
+  "name": "Walnut",
   "version": "1.0.0",
-  "description": "",
+  "description": "Walnut Is A Multipurpose Discord Bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "NanduWasTaken",
   "license": "ISC",
   "dependencies": {
-    "@replit/node-fetch": "^3.1.0",
     "@types/node": "^18.0.6",
     "discord.js": "^14.13.0",
-    "mongoose": "^7.4.4"
+    "mongoose": "^7.4.4",
+    "undici": "^5.26.3"
   },
   "devDependencies": {
     "eslint": "^8.32.0"

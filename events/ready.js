@@ -1,19 +1,23 @@
 const { Events, ActivityType } = require("discord.js");
-const config = require("./../config");
+
 
 module.exports = {
   name: Events.ClientReady,
   once: true,
-  execute(client) {
+  async execute(client) {
+
     client.user.setPresence({
       activities: [
         {
-          name: config.presence.name,
-          type: config.presence.type,
+          name: "Watching Over The Servers",
+          type: ActivityType.Watching,
         },
       ],
-      status: config.presence.status,
+      status: "online",
     });
+
+
     console.log(`[✅] Logged in as ${client.user.tag}`);
+
   },
 };

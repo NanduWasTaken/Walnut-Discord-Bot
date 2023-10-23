@@ -13,7 +13,9 @@ const client = new Client({
 });
 
 client.commands = new Collection();
+client.commands = new Collection();
 client.cooldowns = new Collection();
+
 
 const handlerPath = path.join(__dirname, "handlers");
 const handlerFiles = fs
@@ -26,12 +28,15 @@ for (const file of handlerFiles) {
   if (handler.execute) {
     handler.execute(client);
   } else {
-    console.error(`[❌] Failed To Load ${file} Handler.`);
+    console.log(`[❌] ${file} Handler Doesn't Have Execute Function`);
   }
 }
+
+
 
 process.on("unhandledRejection", (error) => {
   console.error("[❌] Error: ", error);
 });
+
 
 client.login(config.TOKEN);
