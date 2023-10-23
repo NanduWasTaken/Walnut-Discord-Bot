@@ -41,7 +41,9 @@ module.exports = {
       const response = await fetch(requestUrl);
 
       if (response.status !== 200) {
-        return interaction.editReply("We Are Having Trouble With The Api, Please Try Again.");
+        return interaction.editReply(
+          "We Are Having Trouble With The Api, Please Try Again.",
+        );
       }
 
       const data = await response.json();
