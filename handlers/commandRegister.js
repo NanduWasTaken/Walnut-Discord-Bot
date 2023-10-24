@@ -6,6 +6,7 @@ const commandCompairing = require("./../utils/commandCompairing");
 
 module.exports = {
   async execute(client) {
+    
     client.once(Events.ClientReady, async () => {
       const localCommands = getLocalCommands.get();
       const applicationCommands = guildId

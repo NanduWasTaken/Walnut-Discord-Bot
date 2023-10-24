@@ -3,3 +3,4 @@ package-lock.json
 .github
 .replit
 replit.nix
+_config.yml

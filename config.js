@@ -2,7 +2,7 @@ const { ActivityType } = require("discord.js");
 
 module.exports = {
   TOKEN: process.env.TOKEN,
-  DB_URI: process.env.DB,
+  DB_URI: process.env.DB_URI,
   help_category_icon: {
     fun: "😃",
     moderation: "⚒️",
