@@ -15,7 +15,6 @@ module.exports = {
     .setName("info")
     .setDescription("Get Info About The Bot!"),
   async execute(interaction) {
-
     const inviteLink = interaction.client.generateInvite({
       permissions: [PermissionFlagsBits.Administrator],
       scopes: [OAuth2Scopes.Bot],
@@ -29,8 +28,8 @@ module.exports = {
       .setThumbnail(interaction.client.user.avatarURL({ size: 1024 }))
       .addFields(
         {
-          name: '👑┆Owner Name',
-          value: '[NanduWasTaken](https://github.com/NanduWasTaken)',
+          name: "👑┆Owner Name",
+          value: "[NanduWasTaken](https://github.com/NanduWasTaken)",
           inline: true,
         },
         {
@@ -39,13 +38,13 @@ module.exports = {
           inline: true,
         },
         {
-          name: '🏢┆Organization',
-          value: '[Walnuut](https://github.com/walnuut)',
+          name: "🏢┆Organization",
+          value: "[Walnuut](https://github.com/walnuut)",
           inline: true,
         },
         {
-          name: '🌐┆Website',
-          value: '[Website](https://nandu.is-cool.dev/Walnut-Discord-Bot)',
+          name: "🌐┆Website",
+          value: "[Website](https://nandu.is-cool.dev/Walnut-Discord-Bot)",
           inline: true,
         },
       )
@@ -63,14 +62,18 @@ module.exports = {
       .setURL(config.supportServer)
       .setEmoji("🗂️")
       .setStyle(ButtonStyle.Link);
- 
+
     const botWebsite = new ButtonBuilder()
       .setLabel("Website")
-      .setURL('https://nandu.is-cool.dev/Walnut-Discord-Bot')
+      .setURL("https://nandu.is-cool.dev/Walnut-Discord-Bot")
       .setEmoji("🌐")
       .setStyle(ButtonStyle.Link);
 
-    const row = new ActionRowBuilder().addComponents(link, supportServer, botWebsite);
+    const row = new ActionRowBuilder().addComponents(
+      link,
+      supportServer,
+      botWebsite,
+    );
 
     await interaction.reply({
       embeds: [embed],
