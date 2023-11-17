@@ -2,7 +2,7 @@ const { Client, GatewayIntentBits, Collection } = require("discord.js");
 const config = require("./config");
 const fs = require("node:fs");
 const path = require("node:path");
-const db = require("./database");
+require("./database/connect");
 
 const client = new Client({
   intents: [
