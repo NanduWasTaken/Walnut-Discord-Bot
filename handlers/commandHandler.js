@@ -4,22 +4,16 @@ const path = require("node:path");
 module.exports = {
   execute(client) {
     const foldersPath = path.join(__dirname, "../commands");
-    const commandFolders = fs
-      .readdirSync(foldersPath)
-      .filter((file) => {
-  return fs
-    .statSync(path.join(foldersPath, file))
-    .isDirectory();
-});
-    
+    const commandFolders = fs.readdirSync(foldersPath).filter((file) => {
+      return fs.statSync(path.join(foldersPath, file)).isDirectory();
+    });
 
     for (const folder of commandFolders) {
-
       const commandsPath = path.join(foldersPath, folder);
       const commandFiles = fs
         .readdirSync(commandsPath)
         .filter((file) => file.endsWith(".js"));
-      
+
       for (const file of commandFiles) {
         const filePath = path.join(commandsPath, file);
         const cmd = require(filePath);
