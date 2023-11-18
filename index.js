@@ -39,5 +39,4 @@ process.on("uncaughtException", (error) => {
   console.error("[❌] Error: ", error);
 });
 
-
 client.login(config.TOKEN);

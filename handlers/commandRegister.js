@@ -19,7 +19,6 @@ module.exports = {
       );
 
       try {
-
         if (commands) {
           await client.application.commands.set(
             commands,
