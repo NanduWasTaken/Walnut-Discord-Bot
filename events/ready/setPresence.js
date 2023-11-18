@@ -13,7 +13,5 @@ module.exports = {
       ],
       status: "online",
     });
-
-    console.log(`[✅] Logged in as ${client.user.tag}`);
   },
 };
