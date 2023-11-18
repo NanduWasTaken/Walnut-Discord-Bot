@@ -19,10 +19,13 @@ module.exports = {
       );
 
       try {
-        await client.application.commands.set(
-          commands,
-          guildId ? guildId : undefined,
-        );
+
+        if (commands) {
+          await client.application.commands.set(
+            commands,
+            guildId ? guildId : undefined,
+          );
+        }
         console.log(
           `[✅] Successfully registered ${localCommands.length} (/) commands ${mode}`,
         );
