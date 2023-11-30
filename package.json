@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js" 
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "NanduWasTaken",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/node": "^18.0.6",
     "discord.js": "^14.13.0",
+    "express": "^4.18.2",
     "mongoose": "^7.4.4",
     "undici": "^5.26.3"
   },
