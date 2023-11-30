@@ -3,7 +3,7 @@ const config = require("./config");
 const fs = require("node:fs");
 const path = require("node:path");
 require("./database/connect");
-require("./server")
+require("./server");
 
 const client = new Client({
   intents: [
@@ -39,6 +39,5 @@ process.on("unhandledRejection", (error) => {
 process.on("uncaughtException", (error) => {
   console.error("[❌] Error: ", error);
 });
-
 
 client.login(config.TOKEN);
