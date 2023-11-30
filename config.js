@@ -3,6 +3,7 @@ const { ActivityType } = require("discord.js");
 module.exports = {
   TOKEN: process.env.TOKEN,
   DB_URI: process.env.DB_URI,
+  port: process.env.PORT,
   help_category_icon: {
     fun: "😃",
     moderation: "⚒️",
