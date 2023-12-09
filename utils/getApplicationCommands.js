@@ -5,7 +5,7 @@ module.exports = {
 
     if (guildId) {
       const guild = await client.guilds.cache.get(guildId);
-      if (!guild) return ['nothing on cache'];
+      if (!guild) return ["nothing on cache"];
       rawApplicationCommands = await guild.commands.fetch();
     } else {
       rawApplicationCommands = await client.application.commands.fetch();
