@@ -3,9 +3,9 @@ module.exports = {
     const applicationCommands = [];
     let rawApplicationCommands;
 
-    const guild = await client.guilds.cache.get(guildId);
-
     if (guildId) {
+   	  const guild = await client.guilds.cache.get(guildId)
+      if (!guild) return [];
       rawApplicationCommands = await guild.commands.fetch();
     } else {
       rawApplicationCommands = await client.application.commands.fetch();
