@@ -18,19 +18,21 @@ module.exports = {
         applicationCommands,
       );
 
-        if (commands) {
-          const guild = await client.guilds.cache.get(guildId);
-    			if (!guild) {
-            console.error(`[❌] The bot has to join the guild with id "${guildId}" to register commands`);
-          }
-          await client.application.commands.set(
-            commands,
-            guildId ? guildId : undefined,
+      if (commands) {
+        const guild = await client.guilds.cache.get(guildId);
+        if (!guild) {
+          console.error(
+            `[❌] The bot has to join the guild with id "${guildId}" to register commands`,
           );
         }
-        console.log(
-          `[✅] Successfully registered ${localCommands.length} (/) commands ${mode}`,
+        await client.application.commands.set(
+          commands,
+          guildId ? guildId : undefined,
         );
+      }
+      console.log(
+        `[✅] Successfully registered ${localCommands.length} (/) commands ${mode}`,
+      );
     });
   },
 };
