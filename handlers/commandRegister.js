@@ -18,8 +18,11 @@ module.exports = {
         applicationCommands,
       );
 
-      try {
         if (commands) {
+          const guild = await client.guilds.cache.get(guildId);
+    			if (!guild) {
+            console.error(`[❌] The bot has to join the guild with id "${guildId}" to register commands`);
+          }
           await client.application.commands.set(
             commands,
             guildId ? guildId : undefined,
@@ -28,9 +31,6 @@ module.exports = {
         console.log(
           `[✅] Successfully registered ${localCommands.length} (/) commands ${mode}`,
         );
-      } catch (error) {
-        console.error("[❌] Error While Registering Commands:", error);
-      }
     });
   },
 };
