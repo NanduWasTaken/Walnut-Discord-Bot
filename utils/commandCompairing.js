@@ -1,7 +1,7 @@
 module.exports = {
   async compair(local, application) {
     if ((local = application)) {
-      return local;
+      return;
     } else {
       return local;
     }
