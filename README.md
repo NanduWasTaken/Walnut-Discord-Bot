@@ -69,7 +69,7 @@ Fill in the Bot Token Field in the `config.js` file &
 Start Your Bot
 
 ```bash
-node index.js
+npm run start
 ```
 
 ## Configuration
