@@ -1,5 +1,3 @@
-const { ActivityType } = require("discord.js");
-
 module.exports = {
   TOKEN: process.env.TOKEN,
   DB_URI: process.env.DB_URI,
@@ -11,7 +9,7 @@ module.exports = {
     ai: "🤖",
     bot: "💥",
   },
-  guildId: "1122371463060668489",
+  guildId: "",
   ownerId: "852381000528035890",
   supportServer: "https://discord.gg/nPCNpEPWTh",
 };

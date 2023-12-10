@@ -2,6 +2,10 @@
   "name": "Walnut",
   "version": "1.0.0",
   "description": "Walnut Is A Multipurpose Discord Bot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NanduWasTaken/Walnut-Discord-Bot.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,8 +20,5 @@
     "express": "^4.18.2",
     "mongoose": "^7.4.4",
     "undici": "^5.26.3"
-  },
-  "devDependencies": {
-    "eslint": "^8.32.0"
   }
 }
