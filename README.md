@@ -75,17 +75,19 @@ node index.js
 ## Configuration
 
 On your config.js file you can modify settings
+
 ```js
 module.exports = {
   TOKEN: process.env.TOKEN, // Your Bot Token
   DB_URI: process.env.DB_URI, // Your MongoDB Database URI
   port: process.env.PORT, // Your Website Port
-  help_category_icon: { // Help Category icon shows in the select menu of /help
-  	fun: "😃",
- 	  moderation: "⚒️",
+  help_category_icon: {
+    // Help Category icon shows in the select menu of /help
+    fun: "😃",
+    moderation: "⚒️",
     utility: "📙",
- 	  ai: "🤖",
- 	  bot: "💥",
+    ai: "🤖",
+    bot: "💥",
   },
   guildId: "", // ID of the server to register guild commands. (If you leave none then the commands will register globally)
   ownerId: "852381000528035890", // Owners Discord ID. Gives immune to some fun commands
