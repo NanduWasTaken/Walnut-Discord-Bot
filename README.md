@@ -51,9 +51,9 @@
 - Discord Token. Get it from [Discord Developers Portal](https://discord.com/developers/applications)
 - Mongo Database URL. Get it from [MongoDB](https://cloud.mongodb.com/v2/635277bf9f5c7b5620db28a4#clusters)
 
-## Start
+## Setting Up Your Own Walnut
 
-Clone the repo by running
+Clone the repo by running on your terminal
 
 ```bash
 git clone https://github.com/NanduWasTaken/Walnut-Discord-Bot
@@ -70,6 +70,29 @@ Start Your Bot
 
 ```bash
 node index.js
+```
+
+## Configuration
+
+On your config.js file you can modify settings
+
+```js
+module.exports = {
+  TOKEN: process.env.TOKEN, // Your Bot Token
+  DB_URI: process.env.DB_URI, // Your MongoDB Database URI
+  port: process.env.PORT, // Your Website Port
+  help_category_icon: {
+    // Help Category icon shows in the select menu of /help
+    fun: "😃",
+    moderation: "⚒️",
+    utility: "📙",
+    ai: "🤖",
+    bot: "💥",
+  },
+  guildId: "", // ID of the server to register guild commands. (If you leave none then the commands will register globally)
+  ownerId: "852381000528035890", // Owners Discord ID. Gives immune to some fun commands
+  supportServer: "https://discord.gg/nPCNpEPWTh", // Your support discord server
+};
 ```
 
 ## Used Pakages & Modules
