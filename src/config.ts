@@ -1,5 +1,5 @@
 export default {
-    TOKEN: "MTAzMTkyMDI2OTI1MTU4NDAxMQ.GsIEgU.FR96UxVreSKt6gzyIEkn_qT1W_UXkzd13xUJOs",
+    TOKEN: process.env.token,
     DB_URI: process.env.DB_URI,
     port: process.env.PORT,
     help_category_icon: {
