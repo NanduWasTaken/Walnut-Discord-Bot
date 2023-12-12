@@ -1,7 +1,7 @@
 export default {
   TOKEN: process.env.token,
   DB_URI: process.env.DB_URI,
-  port: process.env.PORT,
+  PORT: process.env.PORT,
   help_category_icon: {
     fun: "😃",
     moderation: "⚒️",
