@@ -1,0 +1,33 @@
+name: Code Check
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            # Setup Action
+            - uses: actions/checkout@v3
+
+            # Setup PNPM
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 8
+
+            # Create Blank config.json
+            - name: Create Blank config.json
+              run: echo '{"auth":"","webhook":"","token":"","api":"","timezone":"","secret":"","/":"Config","BetaServer":[""],"BetaUser":[""],"moderator-only":"","error-log":"","announcement":"","//":"google auth","sheet":"","scopes":"","private_key_id":"","private_key":"","client_email":""}' > config.json
+
+            # Install Dependencies
+            - name: Install dependencies
+              run: pnpm install
+
+            # Run Test
+            - name: Run test
+              run: pnpm run test
