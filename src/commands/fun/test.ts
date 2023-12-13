@@ -1,24 +1,21 @@
-import { ChatInputCommandInteraction } from "discord.js";
-import { ChatInputCommandData } from "../../type";
-import { uptime } from "coolcake";
+import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js"
+import { CommandObject } from "../../type"
+import { uptime } from "coolcake"
 
-export const data: ChatInputCommandData = {
-  name: "test",
-  description: "Check Bot Status",
-};
+export default {
+    data: new SlashCommandBuilder().setName("test").setDescription("Check Bot Status"),
 
-export async function run(interaction: ChatInputCommandInteraction) {
-  await interaction.deferReply();
-  const reply = await interaction.fetchReply();
-  const ping = reply.createdTimestamp - interaction.createdTimestamp;
-  interaction.followUp({
-    embeds: [
-      {
-        color: 0x5865f2,
-        description: `Client: ${ping}ms \nWebsocket: ${
-          interaction.client.ws.ping
-        }ms \nUptime: ${uptime()}`,
-      },
-    ],
-  });
-}
+    run: async function (interaction: ChatInputCommandInteraction) {
+        await interaction.deferReply()
+        const reply = await interaction.fetchReply()
+        const ping = reply.createdTimestamp - interaction.createdTimestamp
+        interaction.followUp({
+            embeds: [
+                {
+                    color: 0x5865f2,
+                    description: `Client: ${ping}ms \nWebsocket: ${interaction.client.ws.ping}ms \nUptime: ${uptime()}`
+                }
+            ]
+        })
+    }
+} satisfies CommandObject
