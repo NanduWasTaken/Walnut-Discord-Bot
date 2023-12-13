@@ -37,19 +37,19 @@
 
 ## Features
 
-- [x] Slash Commands
-- [x] Upto date with Discord.js v14
-- [x] Utility Commands
-- [x] Fun Commands
-- [x] Dynamic Help Command
-- [x] Easy to use
-- [x] Don't wanna host it yourself? [Use our public bot](https://discord.com/app)
+-   [x] Slash Commands
+-   [x] Upto date with Discord.js v14
+-   [x] Utility Commands
+-   [x] Fun Commands
+-   [x] Dynamic Help Command
+-   [x] Easy to use
+-   [x] Don't wanna host it yourself? [Use our public bot](https://discord.com/app)
 
 ## Requirements
 
-- NodeJs v17+. Download it from [NodeJS](https://nodejs.org/en/download/current)
-- Discord Token. Get it from [Discord Developers Portal](https://discord.com/developers/applications)
-- Mongo Database URL. Get it from [MongoDB](https://cloud.mongodb.com/v2/635277bf9f5c7b5620db28a4#clusters)
+-   NodeJs v17+. Download it from [NodeJS](https://nodejs.org/en/download/current)
+-   Discord Token. Get it from [Discord Developers Portal](https://discord.com/developers/applications)
+-   Mongo Database URL. Get it from [MongoDB](https://cloud.mongodb.com/v2/635277bf9f5c7b5620db28a4#clusters)
 
 ## Setting Up Your Own Walnut
 
@@ -78,28 +78,28 @@ On your config.js file you can modify settings
 
 ```js
 module.exports = {
-  TOKEN: process.env.TOKEN, // Your Bot Token
-  DB_URI: process.env.DB_URI, // Your MongoDB Database URI
-  port: process.env.PORT, // Your Website Port
-  help_category_icon: {
-    // Help Category icon shows in the select menu of /help
-    fun: "😃",
-    moderation: "⚒️",
-    utility: "📙",
-    ai: "🤖",
-    bot: "💥",
-  },
-  guildId: "", // ID of the server to register guild commands. (If you leave none then the commands will register globally)
-  ownerId: "852381000528035890", // Owners Discord ID. Gives immune to some fun commands
-  supportServer: "https://discord.gg/nPCNpEPWTh", // Your support discord server
-};
+    TOKEN: process.env.TOKEN, // Your Bot Token
+    DB_URI: process.env.DB_URI, // Your MongoDB Database URI
+    port: process.env.PORT, // Your Website Port
+    help_category_icon: {
+        // Help Category icon shows in the select menu of /help
+        fun: "😃",
+        moderation: "⚒️",
+        utility: "📙",
+        ai: "🤖",
+        bot: "💥"
+    },
+    guildId: "", // ID of the server to register guild commands. (If you leave none then the commands will register globally)
+    ownerId: "852381000528035890", // Owners Discord ID. Gives immune to some fun commands
+    supportServer: "https://discord.gg/nPCNpEPWTh" // Your support discord server
+}
 ```
 
 ## Used Pakages & Modules
 
-- Discord.js v14+
-- Undici (For Api Required Commands)
-- Mongoose (For Mongo DB Database)
+-   Discord.js v14+
+-   Undici (For Api Required Commands)
+-   Mongoose (For Mongo DB Database)
 
 ## Contributers
 
