@@ -4,18 +4,6 @@ import { Interaction } from "discord.js"
 const CoolDown = new Set()
 export default async function (interaction: Interaction) {
     if (interaction.isChatInputCommand() || interaction.isContextMenuCommand()) {
-        if (CoolDown.has(interaction.user.id)) {
-            return interaction.reply({
-                content: `Please wait, you are on a cooldown for \`${interaction.commandName}\``,
-                ephemeral: true
-            })
-        } else {
-            CoolDown.add(interaction.user.id)
-            setTimeout(() => {
-                CoolDown.delete(interaction.user.id)
-            }, 5000)
-        }
-
         const command = Command().find((cmd) => cmd.data.name === interaction.commandName)
         try {
             if (!command || !command.run || typeof command.run !== "function") {
@@ -31,6 +19,10 @@ export default async function (interaction: Interaction) {
             const Option = command?.option
 
             if (Option) {
+                if (Option.CoolDown) {
+                    // Do something
+                }
+
                 if (Option.BotPermission) {
                     let allow = false
                     for (const permission of Option.BotPermission) {
