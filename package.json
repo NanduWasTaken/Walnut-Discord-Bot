@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "NanduWasTaken",
-  "license": "ISC",
+  "license": "MPL-2.0",
   "dependencies": {
     "@types/node": "^18.0.6",
     "discord.js": "^14.13.0",
