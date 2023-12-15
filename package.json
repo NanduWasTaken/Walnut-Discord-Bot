@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node .",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "NanduWasTaken",
@@ -20,5 +21,8 @@
     "express": "^4.18.2",
     "mongoose": "^7.4.4",
     "undici": "^5.26.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0"
   }
 }
