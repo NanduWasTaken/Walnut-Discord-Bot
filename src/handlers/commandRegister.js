@@ -12,14 +12,13 @@ module.exports = {
         : Routes.applicationCommands(client.user.id);
 
       if (guildId) {
-      	const guild = await client.guilds.cache.get(guildId);
-        if(!guild) {
-         console.error(
-           `[❌] The bot has to join the guild with id "${guildId}" to register commands`,
-         );
+        const guild = await client.guilds.cache.get(guildId);
+        if (!guild) {
+          console.error(
+            `[❌] The bot has to join the guild with id "${guildId}" to register commands`,
+          );
         }
       }
-
 
       const commands = [];
       const foldersPath = path.join(__dirname, "../commands");
