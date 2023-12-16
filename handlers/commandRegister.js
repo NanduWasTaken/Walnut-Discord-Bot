@@ -38,6 +38,8 @@ module.exports = {
           }
           commands.push(cmd.data.toJSON());
 	}
+      }
+    };
       
 	const rest = new REST().setToken(client.token);
 
@@ -55,6 +57,6 @@ module.exports = {
 	     console.error(`[❌] Error While Registering Commands: ${error}`);
 	}
    })();
-  });
+});
  },
 };
